@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     function displayQuestions() {
         // the varibles for the questions
-        // the options and answers witll be also included in this
+        // the options and answers will be also included in this
         var allQuestions =
             [
                 {
@@ -42,15 +42,15 @@ $(document).ready(function () {
             }
 
         }
-
+        // if statements to define the correct answers.
         $('button').on("click", function(){
            
             let currentClicked = $(this).text();
 
             if (currentClicked === "hyper text markup language" || currentClicked === "cascade style sheet" || currentClicked === "no" ){
-                console.log("You clicked on the correct answer");
+                alert("That's right");
             } else {
-                console.log("You didn't click on the correct answer"); 
+                alert("sorry, that's wrong");
             }
                     
         })
@@ -58,11 +58,20 @@ $(document).ready(function () {
        
     }
 
-
+    // the on click event listen to start quiz
     $(".btn").on("click", function () {
         startQuiz();
       
     })
 
+    var seconds = 60, $seconds = document.querySelector('#countdown');
+(function countdown() {
+    $seconds.textContent = seconds + ' second' + (seconds == 1 ?  '' :  's')
+    if(seconds --> 0) setTimeout(countdown, 1000)
+})();
 
+    $("#countdown").on("click", function countdown() {
+        startQuiz();
+    })
+    
 });

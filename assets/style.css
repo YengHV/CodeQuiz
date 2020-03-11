@@ -1,5 +1,10 @@
 #text {
     text-align: center;
-    margin: auto;
+    
     padding: 40px;
 }
+
+#countdown {
+    float: right;
+}
+
